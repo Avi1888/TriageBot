@@ -1,0 +1,51 @@
+patient_id,age,gender,arrival_time,chief_complaint,heart_rate,respiratory_rate,oxygen_saturation,temperature,pain_score,mental_status,high_risk,required_specialty,treatment_duration,immediate_intervention,expected_resources
+P001,25,Female,09:00,Chest pain,110,24,94,37.2,8,Alert,True,Cardiologist,45,False,2
+P002,42,Male,09:05,Severe abdominal pain,98,20,97,37.0,7,Alert,False,Surgeon,60,False,2
+P003,19,Female,09:10,Fever and headache,88,18,99,38.5,4,Alert,False,General Physician,30,False,1
+P004,67,Male,09:15,Shortness of breath,125,30,88,38.0,6,Alert,True,Cardiologist,50,False,2
+P005,31,Female,09:20,Minor ankle injury,76,16,99,36.8,3,Alert,False,General Physician,25,False,0
+P006,54,Male,09:25,Dizziness,92,19,98,36.9,5,Alert,False,Neurologist,35,False,1
+P007,28,Female,09:30,High fever,105,22,97,39.1,6,Alert,False,General Physician,40,False,1
+P008,45,Male,09:35,Deep cut on arm,115,22,96,37.1,7,Alert,False,Surgeon,55,False,1
+P009,28,Female,09:40,Back pain,82,17,99,36.7,5,Alert,False,General Physician,30,False,0
+P010,72,Male,09:45,Confusion and weakness,120,26,91,37.5,6,Confused,True,Neurologist,60,False,2
+P011,36,Male,09:50,Severe allergic reaction,118,28,90,37.1,8,Alert,True,General Physician,45,False,2
+P012,22,Female,09:55,Nausea and vomiting,90,20,98,37.3,5,Alert,False,General Physician,30,False,1
+P013,60,Male,10:00,Fracture suspected,105,22,95,36.9,7,Alert,False,Surgeon,55,False,2
+P014,40,Female,10:05,Severe headache,96,21,97,37.0,8,Alert,True,Neurologist,40,False,2
+P015,29,Male,10:10,Minor burn,84,18,99,36.8,3,Alert,False,Surgeon,25,False,0
+P016,51,Female,10:15,Palpitations,112,23,96,37.0,6,Alert,True,Cardiologist,40,False,2
+P017,33,Male,10:20,Eye irritation,78,16,99,36.7,2,Alert,False,General Physician,20,False,0
+P018,64,Female,10:25,Weakness and fatigue,94,20,97,36.9,4,Alert,False,General Physician,35,False,0
+P019,27,Male,10:30,Hand laceration,108,21,98,37.1,6,Alert,False,Surgeon,40,False,1
+P020,48,Female,10:35,Seizure episode,130,29,92,37.4,8,Confused,True,Neurologist,60,False,2
+P021,55,Male,10:40,Cough and breathing difficulty,116,27,91,37.8,6,Alert,True,General Physician,45,False,2
+P022,24,Female,10:45,Muscle pain,80,17,99,36.8,3,Alert,False,General Physician,25,False,0
+P023,39,Male,10:50,Severe leg pain,102,22,96,37.1,7,Alert,False,Surgeon,50,False,1
+P024,68,Female,10:55,Chest discomfort,108,24,94,37.0,7,Alert,True,Cardiologist,45,False,2
+P025,32,Male,11:00,Loss of consciousness episode,122,26,93,37.2,8,Confused,True,Neurologist,60,False,2
+P026,43,Male,11:05,High blood pressure symptoms,110,23,95,37.1,6,Alert,True,Cardiologist,40,False,2
+P027,21,Female,11:10,Sore throat,82,17,99,37.5,3,Alert,False,General Physician,25,False,0
+P028,58,Male,11:15,Abdominal discomfort,96,20,97,37.0,5,Alert,False,Surgeon,40,False,1
+P029,35,Female,11:20,Blurred vision and headache,104,22,96,37.2,6,Alert,False,Neurologist,35,False,2
+P030,70,Male,11:25,Fall with hip pain,118,25,93,36.9,8,Alert,True,Surgeon,60,False,2
+P031,46,Female,11:30,Shortness of breath,120,28,90,37.6,7,Alert,True,Cardiologist,50,False,2
+P032,23,Male,11:35,Minor wrist injury,85,18,99,36.8,4,Alert,False,Surgeon,30,False,0
+P033,62,Female,11:40,High fever and chills,108,24,95,39.2,6,Alert,False,General Physician,45,False,2
+P034,30,Male,11:45,Severe dizziness,100,22,97,37.0,7,Alert,False,Neurologist,40,False,1
+P035,51,Female,11:50,Stomach pain,92,19,98,36.9,5,Alert,False,Surgeon,35,False,1
+P036,41,Male,11:55,Chest tightness,106,23,95,37.1,6,Alert,True,Cardiologist,45,False,2
+P037,26,Female,12:00,Common cold symptoms,78,16,99,37.2,2,Alert,False,General Physician,20,False,0
+P038,57,Male,12:05,Severe back injury,115,25,94,37.0,8,Alert,True,Surgeon,55,False,2
+P039,34,Female,12:10,Numbness in arm,98,21,97,36.9,5,Alert,False,Neurologist,40,False,2
+P040,66,Male,12:15,Diarrhea and dehydration,105,24,94,37.8,6,Alert,False,General Physician,45,False,2
+P041,38,Male,12:20,Severe migraine,102,22,96,37.1,8,Alert,False,Neurologist,45,False,1
+P042,52,Female,12:25,Minor respiratory infection,88,19,98,37.6,4,Alert,False,General Physician,30,False,0
+P043,29,Male,12:30,Deep wound on leg,118,26,94,37.2,8,Alert,True,Surgeon,55,False,2
+P044,63,Female,12:35,Irregular heartbeat,114,24,95,37.0,6,Alert,True,Cardiologist,50,False,2
+P045,20,Male,12:40,Minor headache,76,16,99,36.8,2,Alert,False,General Physician,20,False,0
+P046,47,Female,12:45,Severe chest pain,125,28,91,37.3,9,Alert,True,Cardiologist,60,False,2
+P047,25,Male,12:50,Mild fever,84,18,99,37.8,3,Alert,False,General Physician,25,False,0
+P048,59,Female,12:55,Possible fracture,110,24,95,36.9,7,Alert,False,Surgeon,50,False,2
+P049,37,Male,13:00,Speech difficulty,116,25,94,37.1,7,Alert,True,Neurologist,55,False,2
+P050,69,Female,13:05,Weakness and fatigue,94,20,97,36.8,4,Alert,False,General Physician,35,False,0
