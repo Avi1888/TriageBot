@@ -176,7 +176,10 @@ class EmergencyDepartmentModel(Model):
             self._next_generated_id += 1
         patient = PatientAgent(
             self, patient_id=patient_id, age=data.get("age", 0),
-            symptoms=data.get("symptoms", ""), arrival_time=data["arrival_time"],
+            # Member 1's dataset calls this field chief_complaint; accept both
+            # names so their records can enter the model without losing context.
+            symptoms=data.get("symptoms", data.get("chief_complaint", "")),
+            arrival_time=data["arrival_time"],
             esi_level=level, required_specialty=data.get("required_specialty", "General Physician"),
             treatment_duration=self._duration_for(data), classification=classification,
         )

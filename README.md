@@ -15,6 +15,8 @@ metrics.py                   Pandas metrics and patient result exports
 data/sample_patients.csv     Eight temporary synthetic patients
 run_simulation.py            Sample simulation and scheduling comparison
 tests/                       Agent, model, A*, and metrics tests
+triage_rules.py              Member 1's imported classifier (prototype only)
+triage_integration.py        Adapter from triage records to the simulation
 docs/astar_design.md         Search state, heuristic, and assumptions
 ```
 
@@ -64,10 +66,29 @@ with earlier Member 3 imports. Patient rows use `patient_id`, `age`,
 `arrival_time`, `esi_level`, `required_specialty`, and `treatment_duration`;
 `symptoms` is optional for simulation purposes.
 
-Member 1 can connect `classify_patient(patient)` with
-`EmergencyDepartmentModel(classifier=classify_patient)`. The callback returns a
-mapping with `level`; `reason` and `trace` are retained when present. Specialty
-routing remains the separate `required_specialty` field.
+Member 1 records can be passed to the adapter. Records without an
+`arrival_time` get sequential arrival times using the configured interval;
+`chief_complaint` is preserved as the simulation's `symptoms` field. The
+adapter calls `classify_patient(patient)` when no manual `esi_level` was
+provided, and stores its `reason` and `trace` on the patient.
+
+```python
+from data_loader import load_patients
+from triage_integration import create_triage_model
+
+records = load_patients("data/patients.csv")
+model = create_triage_model(records, duration=300)
+model.run_model()
+print(model.get_patient_results())
+```
+
+Clock-style arrival values such as `09:05` are converted to elapsed simulation
+minutes from the first record. Each dataset's supplied treatment duration and
+specialty are retained by the model.
+
+The classifier code is an educational prototype, not clinically validated.
+Specialty routing remains a separate `required_specialty` field; records
+without it use the simulation's General Physician default.
 
 ## Scheduling algorithms
 
