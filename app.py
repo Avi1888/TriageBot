@@ -160,8 +160,25 @@ def normalize_and_classify_record(raw: dict, default_arrival: int = 0) -> dict:
     return patient_dict
 
 
+def _clock_times_to_minutes(df: pd.DataFrame) -> pd.DataFrame:
+    """Convert HH:MM arrival times (as in data/patients.csv) to minutes from the first arrival."""
+    df = df.copy()
+    col = next((c for c in df.columns if str(c).strip().lower() in {"arrival_time", "arrival time"}), None)
+    if col is None or not df[col].astype(str).str.contains(":").any():
+        return df
+
+    def to_min(v):
+        h, m = str(v).strip().split(":")[:2]
+        return int(h) * 60 + int(m)
+
+    mins = df[col].map(to_min)
+    df[col] = (mins - mins.min()).astype(int)
+    return df
+
+
 def load_records_into_state(df: pd.DataFrame) -> tuple[int, list[str]]:
     """Classify rows from a DataFrame and append non-duplicate valid patients."""
+    df = _clock_times_to_minutes(df)
     existing_ids = set(st.session_state.patients["patient_id"].astype(str))
     added_rows = []
     errors = []
