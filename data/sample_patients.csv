@@ -1,0 +1,9 @@
+patient_id,age,symptoms,arrival_time,esi_level,required_specialty,treatment_duration
+S001,45,Synthetic example A,0,3,General Physician,18
+S002,61,Synthetic example B,0,2,Cardiologist,25
+S003,29,Synthetic example C,1,4,General Physician,12
+S004,53,Synthetic example D,2,3,Neurologist,20
+S005,38,Synthetic example E,3,2,Surgeon,30
+S006,72,Synthetic example F,4,5,Cardiologist,15
+S007,44,Synthetic example G,5,2,General Physician,22
+S008,67,Synthetic example H,5,4,Surgeon,16
