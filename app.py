@@ -262,14 +262,14 @@ if page == "Dashboard":
         roster = pd.DataFrame(model.get_doctor_roster())
         total = len(statuses)
         waiting = int((statuses["status"] == "Waiting").sum()) if total else 0
-        treated = int((statuses["status"] == "Treated").sum()) if total else 0
+        treated = int((statuses["status"] == "Completed").sum()) if total else 0
         avail_docs = int(roster["available"].sum()) if not roster.empty else 0
         total_docs = len(roster)
         doc_display = f"{avail_docs} / {total_docs}"
     else:
         total = len(patients)
         waiting = int((patients["status"] == "Waiting").sum()) if total else 0
-        treated = int((patients["status"] == "Treated").sum()) if total else 0
+        treated = int((patients["status"] == "Completed").sum()) if total else 0
         doc_display = "Ready (Run Sim)"
 
     st.subheader("Hospital Overview")
@@ -541,7 +541,7 @@ elif page == "Simulation":
         m1, m2, m3, m4 = st.columns(4)
         statuses_df = pd.DataFrame(model.get_patient_statuses())
         m1.metric("Simulated Minute", f"{model.current_minute} / {model.duration}")
-        m2.metric("Patients Treated", int((statuses_df["status"] == "Treated").sum()) if not statuses_df.empty else 0)
+        m2.metric("Patients Treated", int((statuses_df["status"] == "Completed").sum()) if not statuses_df.empty else 0)
         m3.metric("Max Queue Length", model.maximum_queue_length)
         m4.metric("Doctor Utilization", f"{model.doctor_utilisation * 100:.1f}%")
 
